@@ -96,7 +96,8 @@ const alias = {
   dellist: "dellist",
   resetlist: "resetlist",
   updatelist: "updatelist",
-  squote: "squote",
+  brat: "brat",
+  bratg: "bratg",
   // extra tools
   translate: "translate",
   cuaca: "cuaca",
@@ -129,6 +130,7 @@ const alias = {
   jadwalsholat: "jadwalsholat",
   gpt: "gpt",
   hangman: "hangman",
+  hangmanstop: "hangmanstop",
   kata: "kata",
 };
 
@@ -310,6 +312,68 @@ async function startBot() {
 
       // ── MEDIA (sticker, eye, hd) ──
       if (await handleMedia(sock, from, msg, pengirimJid, isiPesan)) continue;
+
+      // ── HANGMAN ──   ← HARUS ADA DI SINI
+      if (
+        global.hangmanState?.[from] &&
+        isiPesan.length === 1 &&
+        /^[a-zA-Z]$/.test(isiPesan)
+      ) {
+        const state = global.hangmanState[from];
+        const huruf = isiPesan.toLowerCase();
+        const gambarHangman = [
+          " ___\n|   |\n|\n|\n|\n|___",
+          " ___\n|   |\n|   O\n|\n|\n|___",
+          " ___\n|   |\n|   O\n|   |\n|\n|___",
+          " ___\n|   |\n|   O\n|  /|\n|\n|___",
+          " ___\n|   |\n|   O\n|  /|\\\n|\n|___",
+          " ___\n|   |\n|   O\n|  /|\\\n|  /\n|___",
+          " ___\n|   |\n|   O\n|  /|\\\n|  / \\\n|___",
+        ];
+
+        if (state.tebakan.has(huruf)) {
+          await sock.sendMessage(from, {
+            text: `⚠️ Huruf *${huruf.toUpperCase()}* sudah pernah ditebak!`,
+          });
+          continue;
+        }
+
+        state.tebakan.add(huruf);
+        const benar = state.kata.includes(huruf);
+        if (!benar) state.nyawa--;
+
+        const tampil = state.kata
+          .split("")
+          .map((h) => (state.tebakan.has(h) ? h : "_"))
+          .join(" ");
+        const sudahTebak = [...state.tebakan].join(", ");
+        const menang = !tampil.includes("_");
+
+        if (menang) {
+          clearTimeout(state.timeout);
+          delete global.hangmanState[from];
+          await sock.sendMessage(from, {
+            text: `🎉 *SELAMAT!*\n\n✅ Kata: *${state.kata}*\n❤️ Sisa nyawa: ${state.nyawa}`,
+          });
+        } else if (state.nyawa <= 0) {
+          clearTimeout(state.timeout);
+          const k = state.kata;
+          delete global.hangmanState[from];
+          await sock.sendMessage(from, {
+            text: `\`\`\`\n${gambarHangman[6]}\n\`\`\`\n\n💀 *GAME OVER!*\nJawabannya: *${k}*`,
+          });
+        } else {
+          await sock.sendMessage(from, {
+            text:
+              `\`\`\`\n${gambarHangman[6 - state.nyawa]}\n\`\`\`\n\n` +
+              `${benar ? "✅ Huruf *" + huruf.toUpperCase() + "* ADA!" : "❌ Huruf *" + huruf.toUpperCase() + "* tidak ada!"}\n\n` +
+              `📝 Kata: \`${tampil}\`\n` +
+              `❤️ Nyawa: ${state.nyawa}\n` +
+              `🔤 Ditebak: ${sudahTebak}`,
+          });
+        }
+        continue;
+      }
 
       // ── CEK BALASAN WELCOME ──
       if (global.waitingWelcome?.[pengirimJid]) {

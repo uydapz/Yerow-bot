@@ -145,6 +145,7 @@ const badwordsDefault = [
 
 export async function antiBadwords(sock, from, msg, pengirimJid, isiPesan) {
   if (!config.antiBadwords) return false;
+  if (isiPesan.trim().startsWith('!')) return false;
 
   const pesanLower = isiPesan.toLowerCase();
 

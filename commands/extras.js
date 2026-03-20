@@ -44,7 +44,7 @@ export default {
       "Pohon kelapa di tepi pantai\nBuahnya jatuh satu per satu\nSemoga hidupmu selalu damai\nDan bahagia setiap waktu",
     ];
     const p = pantuns[Math.floor(Math.random() * pantuns.length)];
-    await sock.sendMessage(from, { text: `🎭 *Pantun*\n\n_${p}_` });
+    await sock.sendMessage(from, { text: `🎭 *Pantun*\n\n${p}` });
   },
 
   // ── !horoscope [zodiak] ──
@@ -437,6 +437,24 @@ export default {
 
   // ── !hangman ──
   hangman: async (sock, from) => {
+    if (!global.hangmanState) global.hangmanState = {};
+    if (global.hangmanState[from]) {
+      const s = global.hangmanState[from];
+      const tampil = s.kata
+        .split("")
+        .map((h) => (s.tebakan.has(h) ? h : "_"))
+        .join(" ");
+      await sock.sendMessage(from, {
+        text:
+          `⚠️ Sudah ada game yang berjalan!\n\n` +
+          `📝 Kata: \`${tampil}\`\n` +
+          `❤️ Nyawa: ${s.nyawa}\n` +
+          `🔤 Ditebak: ${[...s.tebakan].join(", ") || "-"}\n\n` +
+          `Ketik huruf untuk menebak, atau *!hangmanstop* untuk berhenti.`,
+      });
+      return;
+    }
+
     const kataList = [
       "kucing",
       "rumah",
@@ -446,31 +464,86 @@ export default {
       "angin",
       "hujan",
       "matahari",
+      "bintang",
+      "laut",
+      "gunung",
+      "sungai",
+      "hutan",
+      "pantai",
+      "pelangi",
+      "nasi",
+      "ayam",
+      "ikan",
+      "sayur",
+      "buah",
+      "mangga",
+      "pisang",
+      "jeruk",
+      "mobil",
+      "motor",
+      "sepeda",
+      "kapal",
+      "pesawat",
+      "kereta",
+      "buku",
+      "pensil",
+      "meja",
+      "kursi",
+      "pintu",
+      "jendela",
+      "lantai",
+      "merah",
+      "biru",
+      "hijau",
+      "kuning",
+      "ungu",
+      "hitam",
+      "putih",
     ];
+
     const kata = kataList[Math.floor(Math.random() * kataList.length)];
-    const tersembunyi = "_ ".repeat(kata.length).trim();
+    const tampil = "_ ".repeat(kata.length).trim();
+
+    global.hangmanState[from] = {
+      kata,
+      tebakan: new Set(),
+      nyawa: 6,
+      timeout: setTimeout(async () => {
+        if (global.hangmanState[from]) {
+          const k = global.hangmanState[from].kata;
+          delete global.hangmanState[from];
+          await sock.sendMessage(from, {
+            text: `⏰ Waktu habis!\nJawabannya: *${k}*`,
+          });
+        }
+      }, 120000),
+    };
 
     await sock.sendMessage(from, {
       text:
-        `🎮 *HANGMAN*\n\n` +
-        `\`\`\`\n` +
-        ` ___\n` +
-        `|   |\n` +
-        `|\n` +
-        `|\n` +
-        `|\n` +
-        `|___\n` +
-        `\`\`\`\n` +
-        `📝 Kata: \`${tersembunyi}\`\n` +
-        `🔢 ${kata.length} huruf\n\n` +
-        `_Tebak hurufnya satu per satu!\n` +
-        `Jawaban muncul dalam 90 detik._`,
+        `🎮 *HANGMAN DIMULAI!*\n\n` +
+        `\`\`\`\n ___\n|   |\n|\n|\n|\n|___\n\`\`\`\n\n` +
+        `📝 Kata: \`${tampil}\`\n` +
+        `🔢 Huruf: ${kata.length}\n` +
+        `❤️ Nyawa: 6\n\n` +
+        `Ketik 1 huruf untuk menebak!\n` +
+        `*!hangmanstop* untuk berhenti.\n` +
+        `_Waktu: 2 menit_`,
     });
+  },
 
-    setTimeout(async () => {
+  hangmanstop: async (sock, from) => {
+    if (!global.hangmanState?.[from]) {
       await sock.sendMessage(from, {
-        text: `⏰ Game selesai! Jawabannya: *${kata}*`,
+        text: "❌ Tidak ada game yang berjalan.",
       });
-    }, 90000);
+      return;
+    }
+    const kata = global.hangmanState[from].kata;
+    clearTimeout(global.hangmanState[from].timeout);
+    delete global.hangmanState[from];
+    await sock.sendMessage(from, {
+      text: `🛑 Game dihentikan!\nJawabannya: *${kata}*`,
+    });
   },
 };

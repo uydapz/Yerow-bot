@@ -44,5 +44,24 @@
         "text": "ALl MEM"
       }
     ]
+  },
+  "120363426315561528@g.us": {
+    "member": [
+      {
+        "type": "item",
+        "text": "daffa",
+        "originalText": "1. daffa"
+      },
+      {
+        "type": "item",
+        "text": "dafi",
+        "originalText": "2. dafi"
+      },
+      {
+        "type": "item",
+        "text": "yura",
+        "originalText": "3. difa"
+      }
+    ]
   }
 }

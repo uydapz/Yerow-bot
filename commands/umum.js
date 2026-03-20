@@ -24,7 +24,7 @@ export default {
       `╔════════════════════════╗\n` +
       `                 ✨ *YEROW's BOT* ✨                        \n` +
       `                    _Command List v1.0_                          \n` +
-      `               📦 Total: *100 commands*                     \n` +
+      `               📦 Total: *101 commands*                     \n` +
       `╚════════════════════════╝\n\n` +
       `┌────────────────────────┐\n` +
       `  🐾 *UMUM* _(9 cmd)_                    \n` +
@@ -66,7 +66,8 @@ export default {
       `  ✦ \`!toaudio\` — Video → audio\n` +
       `  ✦ \`!tts [teks]\` — Text to speech\n` +
       `  ✦ \`!quotely [teks]\` — Buat gambar quote\n` +
-      `  ✦ \`!squote [teks]\` — Buat sticker meme\n\n` +
+      `  ✦ \`!brat [teks]\` — Buat sticker meme\n\n` +
+      `  ✦ \`!bratG [teks]\` — Buat sticker meme v.gif\n\n` +
       `┌────────────────────────┐\n` +
       ` 🛠️ *EXTRA TOOLS* _(17 cmd)_                                 \n` +
       `└────────────────────────┘\n` +

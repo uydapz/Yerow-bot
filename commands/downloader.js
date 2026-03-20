@@ -46,7 +46,9 @@ const downloader = {
       return;
     }
 
-    await sock.sendMessage(from, { text: "⏳ Mengunduh audio YouTube..." });
+    await sock.sendMessage(from, {
+      text: "⏳ Mengunduh audio YouTube... \n ⏰Memerlukan waktu 10-30detik",
+    });
 
     const outPath = join(TEMP_DIR, `ytmp3_${Date.now()}.mp3`);
 
@@ -94,7 +96,9 @@ const downloader = {
       return;
     }
 
-    await sock.sendMessage(from, { text: "⏳ Mengunduh video YouTube..." });
+    await sock.sendMessage(from, {
+      text: "⏳ Mengunduh video YouTube... \n ⏰Memerlukan waktu 10-30detik",
+    });
 
     const outPath = join(TEMP_DIR, `ytmp4_${Date.now()}.mp4`);
 
@@ -139,7 +143,9 @@ const downloader = {
       return;
     }
 
-    await sock.sendMessage(from, { text: "⏳ Mengunduh video TikTok..." });
+    await sock.sendMessage(from, {
+      text: "⏳ Mengunduh video TikTok... \n ⏰Memerlukan waktu 10-30detik",
+    });
 
     const outPath = join(TEMP_DIR, `tiktok_${Date.now()}.mp4`);
 
@@ -184,7 +190,9 @@ const downloader = {
       return;
     }
 
-    await sock.sendMessage(from, { text: "⏳ Mengunduh dari Instagram..." });
+    await sock.sendMessage(from, {
+      text: "⏳ Mengunduh dari Instagram... \n ⏰Memerlukan waktu 10-30detik",
+    });
 
     const outPath = join(TEMP_DIR, `igdl_${Date.now()}.mp4`);
     const outPathImg = join(TEMP_DIR, `igdl_${Date.now()}.jpg`);
