@@ -1,0 +1,131 @@
+{
+  "codes": {
+    "40H5-Z5EV-LR7Q": {
+      "durasi": 30,
+      "satuan": "hari",
+      "ms": 2592000000,
+      "catatan": "Auto - 120363425416715686",
+      "used": true,
+      "usedBy": "120363425416715686@g.us",
+      "createdAt": 1773926955158,
+      "usedAt": 1773926955162
+    },
+    "OL1Y-R64S-0BSD": {
+      "durasi": 30,
+      "satuan": "hari",
+      "ms": 2592000000,
+      "catatan": "Auto - 120363425416715686",
+      "used": true,
+      "usedBy": "120363425416715686@g.us",
+      "createdAt": 1773927670163,
+      "usedAt": 1773927670164
+    },
+    "ZR13-ADLV-Q4EZ": {
+      "durasi": 2,
+      "satuan": "hari",
+      "ms": 172800000,
+      "catatan": "Auto - 120363425416715686",
+      "used": true,
+      "usedBy": "120363425416715686@g.us",
+      "createdAt": 1773933623331,
+      "usedAt": 1773933623331
+    },
+    "D47X-CJVT-722A": {
+      "durasi": 30,
+      "satuan": "hari",
+      "ms": 2592000000,
+      "catatan": "Auto - 120363425416715686",
+      "used": true,
+      "usedBy": "120363425416715686@g.us",
+      "createdAt": 1773937894657,
+      "usedAt": 1773937894658
+    },
+    "9EF7-BSG5-PBIQ": {
+      "durasi": 30,
+      "satuan": "hari",
+      "ms": 2592000000,
+      "catatan": "Auto - 120363405094220450",
+      "used": true,
+      "usedBy": "120363405094220450@g.us",
+      "createdAt": 1773944180261,
+      "usedAt": 1773944180262
+    },
+    "LI69-LDLK-A293": {
+      "durasi": 30,
+      "satuan": "hari",
+      "ms": 2592000000,
+      "catatan": "Auto - 120363405094220450",
+      "used": true,
+      "usedBy": "120363405094220450@g.us",
+      "createdAt": 1773944199498,
+      "usedAt": 1773944199498
+    },
+    "SVER-UE0L-CGX8": {
+      "durasi": 30,
+      "satuan": "hari",
+      "ms": 2592000000,
+      "catatan": "Auto - 120363428844844289",
+      "used": true,
+      "usedBy": "120363428844844289@g.us",
+      "createdAt": 1773945864214,
+      "usedAt": 1773945864215
+    },
+    "1PD3-R981-DKDC": {
+      "durasi": 30,
+      "satuan": "hari",
+      "ms": 2592000000,
+      "catatan": "Auto - 120363406773398368",
+      "used": true,
+      "usedBy": "120363406773398368@g.us",
+      "createdAt": 1773947472857,
+      "usedAt": 1773947472858
+    },
+    "BFFE-GC35-SDP1": {
+      "durasi": 30,
+      "satuan": "hari",
+      "ms": 2592000000,
+      "catatan": "Auto - 120363407031072590",
+      "used": true,
+      "usedBy": "120363407031072590@g.us",
+      "createdAt": 1773984356754,
+      "usedAt": 1773984356755
+    }
+  },
+  "groups": {
+    "120363425416715686@g.us": {
+      "kode": "D47X-CJVT-722A",
+      "aktifSejak": 1773937894658,
+      "expiredAt": 1776529894658,
+      "durasi": 30,
+      "satuan": "hari"
+    },
+    "120363405094220450@g.us": {
+      "kode": "LI69-LDLK-A293",
+      "aktifSejak": 1773944199498,
+      "expiredAt": 1776536199498,
+      "durasi": 30,
+      "satuan": "hari"
+    },
+    "120363428844844289@g.us": {
+      "kode": "SVER-UE0L-CGX8",
+      "aktifSejak": 1773945864215,
+      "expiredAt": 1776537864215,
+      "durasi": 30,
+      "satuan": "hari"
+    },
+    "120363406773398368@g.us": {
+      "kode": "1PD3-R981-DKDC",
+      "aktifSejak": 1773947472858,
+      "expiredAt": 1776539472858,
+      "durasi": 30,
+      "satuan": "hari"
+    },
+    "120363407031072590@g.us": {
+      "kode": "BFFE-GC35-SDP1",
+      "aktifSejak": 1773984356756,
+      "expiredAt": 1776576356755,
+      "durasi": 30,
+      "satuan": "hari"
+    }
+  }
+}
