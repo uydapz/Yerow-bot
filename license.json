@@ -109,6 +109,16 @@
       "usedBy": "120363424381334665@g.us",
       "createdAt": 1774006141619,
       "usedAt": 1774006141620
+    },
+    "SAUG-8MWA-96DO": {
+      "durasi": 30,
+      "satuan": "hari",
+      "ms": 2592000000,
+      "catatan": "Auto - 120363423621505974",
+      "used": true,
+      "usedBy": "120363423621505974@g.us",
+      "createdAt": 1774020298206,
+      "usedAt": 1774020298207
     }
   },
   "groups": {
@@ -158,6 +168,13 @@
       "kode": "QG3O-WUAY-BIE1",
       "aktifSejak": 1774006141621,
       "expiredAt": 1776598141620,
+      "durasi": 30,
+      "satuan": "hari"
+    },
+    "120363423621505974@g.us": {
+      "kode": "SAUG-8MWA-96DO",
+      "aktifSejak": 1774020298207,
+      "expiredAt": 1776612298207,
       "durasi": 30,
       "satuan": "hari"
     }

@@ -1,67 +1,33 @@
 {
   "120363406773398368@g.us": {},
   "120363428844844289@g.us": {
-    "absen": [
+    "absen": [],
+    "teamft": [
       {
         "type": "header",
-        "text": "CAPT"
+        "text": "Team 1"
       },
       {
         "type": "item",
-        "text": "OLYP  |  CLOTZ - @45042043502608",
-        "originalText": "1. OLYP  |  CLOTZ - @45042043502608"
-      },
-      {
-        "type": "header",
-        "text": "CO.CAPT"
+        "text": "Gilang (lead)",
+        "originalText": "1. Gilang (lead)"
       },
       {
         "type": "item",
-        "text": "OLYP  |  Quezy - @",
-        "originalText": "2. OLYP  |  Quezy - @"
-      },
-      {
-        "type": "header",
-        "text": "OFC"
+        "text": "Kiky",
+        "originalText": "2. Kiky"
       },
       {
         "type": "item",
-        "text": "OLYP  |  Yero  - @",
-        "originalText": "3. OLYP  |  Yero  - @"
+        "text": "Fans",
+        "originalText": "3. Fans"
       },
       {
         "type": "item",
-        "text": "OLYP  |  Kikyy - @122518706876432",
-        "originalText": "4. OLYP  |  Kikyy - @122518706876432"
-      },
-      {
-        "type": "item",
-        "text": "Lynzxx - @",
-        "originalText": "5. Lynzxx - @"
-      },
-      {
-        "type": "header",
-        "text": "ALl MEM"
+        "text": "Dapa",
+        "originalText": "4. Dapa"
       }
     ]
   },
-  "120363426315561528@g.us": {
-    "member": [
-      {
-        "type": "item",
-        "text": "daffa",
-        "originalText": "1. daffa"
-      },
-      {
-        "type": "item",
-        "text": "dafi",
-        "originalText": "2. dafi"
-      },
-      {
-        "type": "item",
-        "text": "yura",
-        "originalText": "3. difa"
-      }
-    ]
-  }
+  "120363423621505974@g.us": {}
 }
